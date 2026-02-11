@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Brand - Digital Innovation Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        pixelcyan: '#06b6d4', // Warna dari logo
+                        pixelorange: '#f97316', // Warna dari logo
+                        darkbg: '#111827', // Gray-900
+                        cardbg: '#1f2937', // Gray-800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS untuk animasi fade-up */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 font-sans leading-relaxed overflow-x-hidden">
+
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center gap-2">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pixelcyan to-pixelorange">Pixel</span>Brand
+            </a>
+
+            <nav class="hidden md:flex gap-8 font-medium text-sm uppercase tracking-wider">
+                <a href="#home" class="hover:text-pixelcyan transition">Home</a>
+                <a href="#services" class="hover:text-pixelcyan transition">Layanan</a>
+                <a href="#portfolio" class="hover:text-pixelcyan transition">Portofolio</a>
+                <a href="#pricing" class="hover:text-pixelcyan transition">Harga</a>
+                <a href="#contact" class="hover:text-pixelcyan transition">Kontak</a>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-darkbg/95 z-40 flex flex-col items-center justify-center gap-8 text-xl font-bold uppercase tracking-widest transition-all duration-300">
+            <button id="close-btn" class="absolute top-6 right-8 text-3xl">✕</button>
+            <a href="#home" class="mobile-link hover:text-pixelcyan">Home</a>
+            <a href="#services" class="mobile-link hover:text-pixelcyan">Layanan</a>
+            <a href="#portfolio" class="mobile-link hover:text-pixelcyan">Portofolio</a>
+            <a href="#pricing" class="mobile-link hover:text-pixelcyan">Harga</a>
+            <a href="#contact" class="mobile-link hover:text-pixelcyan">Kontak</a>
+        </div>
+    </header>
+
+    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-pixelcyan opacity-10 rounded-full filter blur-3xl -z-10 animate-pulse"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-pixelorange opacity-10 rounded-full filter blur-3xl -z-10 animate-pulse" style="animation-delay: 2s;"></div>
+
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            
+            <div class="md:w-3/5 text-center md:text-left fade-up">
+                <h2 class="text-pixelcyan font-semibold tracking-widest mb-4 uppercase text-sm">Digital Creative Studio</h2>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-[1.1]">
+                    Elevating Your Vision,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pixelcyan to-pixelorange">Go Digital</span> at a Time.
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 md:w-5/6">
+                    Kami percaya bahwa kesuksesan digital memerlukan sinergi antara antarmuka yang intuitif, pengelolaan konten yang strategis, dan infrastruktur sistem yang kokoh. Layanan Utama Kami
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-pixelcyan to-pixelorange rounded-full text-white font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-cyan-500/30">
+                        Konsultasi Gratis
+                    </a>
+                    <a href="#portfolio" class="px-8 py-4 border-2 border-gray-600 rounded-full text-white font-bold text-lg hover:border-pixelcyan hover:text-pixelcyan transition-colors">
+                        Lihat Karya
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-2/5 relative fade-up" style="transition-delay: 200ms;">
+                <div class="absolute inset-0 bg-gradient-to-tr from-pixelcyan/20 to-pixelorange/20 rounded-3xl blur-2xl -z-10 transform scale-95 animate-pulse"></div>
+                
+                <div class="relative group">
+                    <div class="overflow-hidden rounded-3xl border border-gray-800 shadow-2xl transition duration-500 group-hover:border-pixelcyan/50">
+                        <img src="/Gambar/logo12.png" 
+                             alt="Pixel Brand Office" 
+                             class="w-full h-auto object-cover transform transition duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="absolute -top-6 -left-6 bg-cardbg p-4 rounded-2xl border border-gray-700 shadow-2xl animate-bounce hidden lg:block" style="animation-duration: 4s;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-pixelcyan/20 rounded-full flex items-center justify-center text-pixelcyan">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase font-bold">Execution</p>
+                                <p class="text-sm font-bold">Fast & Clean</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="about" class="py-20 bg-darkbg relative">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                
+                <div class="md:w-1/2 relative fade-up">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-pixelcyan/20 rounded-tl-3xl -z-10"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-pixelorange/20 rounded-br-3xl -z-10"></div>
+                    
+                    <img src="/Gambar/tim.png" 
+                         alt="Tim Pixel Brand" 
+                         class="rounded-2xl shadow-2xl border border-gray-800 w-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                    
+                    <div class="absolute bottom-8 -left-6 bg-cardbg p-4 rounded-xl border border-gray-700 shadow-xl hidden md:block">
+                        <p class="text-pixelcyan font-bold text-2xl">4+</p>
+                        <p class="text-gray-400 text-xs">Semester Pengalaman<br>Bisnis Digital</p>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 fade-up" style="transition-delay: 100ms;">
+                    <h4 class="text-pixelorange font-bold tracking-widest uppercase mb-2 text-sm">Tentang Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                        Lebih dari Sekadar Koding,<br>
+                        Kami Membangun <span class="text-transparent bg-clip-text bg-gradient-to-r from-pixelcyan to-pixelorange">Solusi Bisnis.</span>
+                    </h2>
+                    
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Pixel Brand lahir di Bondowoso dari semangat 4 mahasiswa Bisnis Digital yang percaya bahwa teknologi canggih tidak harus mahal dan rumit.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Kami menggabungkan pemahaman teknis <strong>(Laravel, Flutter, AI)</strong> dengan strategi bisnis yang kami pelajari di bangku kuliah. Hasilnya? Website yang tidak hanya "jalan", tapi juga membantu bisnis Anda berkembang secara nyata.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start">
+                            <span class="text-pixelcyan text-xl mr-3 mt-1">⚡</span>
+                            <div>
+                                <h5 class="text-white font-bold">Fast Execution</h5>
+                                <p class="text-gray-500 text-xs">Kerja cepat dengan teknologi modern.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-pixelorange text-xl mr-3 mt-1">🎓</span>
+                            <div>
+                                <h5 class="text-white font-bold">Business Mindset</h5>
+                                <p class="text-gray-500 text-xs">Paham target pasar & ROI.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#team" class="text-white border-b-2 border-pixelcyan pb-1 hover:text-pixelcyan transition">
+                        Kenalan dengan Tim Kami &rarr;
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-cardbg/50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Layanan Unggulan</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Solusi digital end-to-end yang menggabungkan estetika desain dan kekuatan teknologi.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-cardbg p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-xl hover:shadow-pixelcyan/10 border border-gray-800 fade-up">
+                    <div class="w-14 h-14 bg-pixelcyan/20 flex items-center justify-center rounded-lg mb-6 text-pixelcyan text-2xl">
+                        🎨
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">UI/UX Design</h3>
+                    <p class="text-gray-400 mb-4">Menciptakan antarmuka yang intuitif dan pengalaman pengguna yang memikat berbasis data dan riset.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Mobile App Design</li>
+                        <li>• Website Prototyping (Figma)</li>
+                        <li>• User Journey Map</li>
+                    </ul>
+                </div>
+
+                <div class="bg-cardbg p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-xl hover:shadow-pixelorange/10 border border-gray-800 fade-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-pixelorange/20 flex items-center justify-center rounded-lg mb-6 text-pixelorange text-2xl">
+                        💻
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-400 mb-4">Membangun website yang cepat, aman, dan scalable menggunakan teknologi modern terbaru.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Landing Page Responsif</li>
+                        <li>• Fullstack Laravel + Filament</li>
+                        <li>• Sistem Informasi Custom</li>
+                    </ul>
+                </div>
+
+                <div class="bg-cardbg p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-xl hover:shadow-pixelcyan/10 border border-gray-800 fade-up" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-pixelcyan/20 flex items-center justify-center rounded-lg mb-6 text-pixelcyan text-2xl">
+                        🚀
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Social Media Mgmt</h3>
+                    <p class="text-gray-400 mb-4">Mengelola kehadiran brand Anda di media sosial untuk meningkatkan engagement dan loyalitas.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Content Planning & Creation</li>
+                        <li>• Visual Branding (Feeds)</li>
+                        <li>• **Content Audit & Review**</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-darkbg">
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-12 fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Karya Terbaru</h2>
+            <p class="text-gray-400 max-w-xl mx-auto">Bukti nyata dedikasi kami dalam menciptakan solusi digital yang berdampak.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-12 fade-up">
+            <button onclick="filterPortfolio('all')" id="tab-all" class="port-tab px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-medium transition-all shadow-lg shadow-cyan-500/20">Semua</button>
+            <button onclick="filterPortfolio('web')" id="tab-web" class="port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-pixelcyan transition-all">Web Development</button>
+            <button onclick="filterPortfolio('design')" id="tab-design" class="port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-pink-500 transition-all">Graphic Design</button>
+        </div>
+
+        <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            
+            <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                <div class="p-4 bg-gray-900/50">
+                    <img src="/Gambar/asa.jpg" alt="Sistem AHP" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Web App</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Website photo booth Online</h3>
+                    <p class="text-gray-500 text-sm mt-2">Membuat website photo booth sederhana </p>
+                </div>
+            </div>
+
+            <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up" style="transition-delay: 100ms;">
+                <div class="p-4 bg-gray-900/50">
+                    <img src="/Gambar/web.jpg" alt="Landing Page UMKM" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Landing Page</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Website Jurusan Bisnis</h3>
+                    <p class="text-gray-500 text-sm mt-2">Mengenal Tentang Jurusan Bisnis di Politeknik Negeri Jember</p>
+                </div>
+            </div>
+            <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up" style="transition-delay: 100ms;">
+                <div class="p-4 bg-gray-900/50">
+                    <img src="/Gambar/bd.jpg" alt="Landing Page UMKM" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Landing Page</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Website Sistem Booking Lapanagan Badmintoon</h3>
+                    <p class="text-gray-500 text-sm mt-2">Mempermudah untung booking lewat online</p>
+                </div>
+            </div>
+
+            <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                <div class="p-4 bg-gray-900/50">
+                    <img src="/Gambar/vre.png" alt="Design Vre" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Design for bodycare</h3>
+                    <p class="text-gray-500 text-sm mt-2">proyek rebranding bodycare yang diimplementasikan dalam bentuk desain Instagram feeds. Konsep visual dibuat lebih modern, clean, dan konsisten untuk memperkuat identitas brand serta meningkatkan daya tarik audiens di media sosial. Setiap konten dirancang dengan komposisi yang estetik, informatif, dan selaras dengan positioning produk.</p>
+                </div>
+            </div>
+
+            <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                <div class="p-4 bg-gray-900/50">
+                    <img src="/Gambar/anaga.png" alt="Design Canva" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Design Canva</h3>
+                    <p class="text-gray-500 text-sm mt-2">Aset konten kreatif yang dioptimasi untuk kebutuhan promosi brand.</p>
+                </div>
+            </div>
+
+            <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                <div class="p-4 bg-gray-900/50">
+                    <img src="/Gambar/akuu.jpg" alt="Design Canva" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Design UI/UX</h3>
+                    <p class="text-gray-500 text-sm mt-2">Perancangan antarmuka aplikasi yang modern dengan fokus pada kemudahan navigasi (usability) dan estetika visual untuk memberikan pengalaman terbaik bagi pengguna.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="team" class="py-20 bg-darkbg relative overflow-hidden">
+        <div class="absolute right-0 top-1/2 w-64 h-64 bg-pixelcyan/5 rounded-full filter blur-3xl"></div>
+        <div class="absolute left-0 bottom-0 w-64 h-64 bg-pixelorange/5 rounded-full filter blur-3xl"></div>
+
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet the Minds</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">4 Mahasiswa, 1 Visi. Kami menggabungkan skill teknis dan bisnis untuk solusi digital Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="group bg-cardbg p-6 rounded-2xl border border-gray-800 hover:border-pixelorange transition-all duration-300 hover:-translate-y-2 text-center fade-up">
+            <div class="relative w-32 h-32 mx-auto mb-6">
+                <div class="absolute inset-0 bg-pixelorange rounded-full blur opacity-20 group-hover:opacity-50 transition"></div>
+                <img src="/Gambar/irfann.jpg" alt="Foto CEO" class="relative w-full h-full object-cover rounded-full border-2 border-gray-700 group-hover:border-pixelorange transition">
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Ahmad Irfan</h3>
+                <p class="text-pixelorange text-sm font-semibold uppercase tracking-wider mb-3">XO (Executive Officer)</p>
+                <p class="text-gray-500 text-sm mb-4">"Visioner yang memastikan bisnis klien dan Pixel Brand tumbuh bersama."</p>
+            
+            <div class="flex justify-center gap-3">
+                <a href="https://www.instagram.com/irfannnihhh_?igsh=ang4bmJ1ZnFubDZi" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-full text-gray-400 hover:text-white hover:bg-pixelorange/20 transition-all duration-300 border border-gray-700">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span class="text-xs font-medium">Instagram</span>
+                </a>
+            </div>
+        </div>
+
+                <div class="group bg-cardbg p-6 rounded-2xl border border-gray-800 hover:border-pixelcyan transition-all duration-300 hover:-translate-y-2 text-center fade-up" style="transition-delay: 100ms;">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-pixelcyan rounded-full blur opacity-20 group-hover:opacity-50 transition"></div>
+                        <img src="/Gambar/yz1.JPG" alt="Foto CTO" class="relative w-full h-full object-cover rounded-full border-2 border-gray-700 group-hover:border-pixelcyan transition">
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Moh Yazid Al B</h3>
+                    <p class="text-pixelcyan text-sm font-semibold uppercase tracking-wider mb-3">TO (Tech Officer)</p>
+                    <p class="text-gray-500 text-sm mb-4">"Master of Laravel & Backend. Menjaga sistem tetap aman dan cepat."</p>
+
+                <div class="flex justify-center gap-3">
+                    <a href="https://www.instagram.com/yzidxs/" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-full text-gray-400 hover:text-white hover:bg-pixelorange/20 transition-all duration-300 border border-gray-700">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                        <span class="text-xs font-medium">Instagram</span>
+                    </a>
+                </div>
+                </div>
+
+                <div class="group bg-cardbg p-6 rounded-2xl border border-gray-800 hover:border-pink-500 transition-all duration-300 hover:-translate-y-2 text-center fade-up" style="transition-delay: 200ms;">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-pink-500 rounded-full blur opacity-20 group-hover:opacity-50 transition"></div>
+                        <img src="/Gambar/mei1.jpeg" alt="Foto CMO" class="relative w-full h-full object-cover rounded-full border-2 border-gray-700 group-hover:border-pink-500 transition">
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Maifazul Azizah</h3>
+                    <p class="text-pink-500 text-sm font-semibold uppercase tracking-wider mb-3">MO (Marketing Officer)</p>
+                    <p class="text-gray-500 text-sm mb-4">"Ahli strategi konten dan tren sosial media terbaru."</p>
+                    <div class="flex justify-center gap-3">
+                    <a href="https://www.instagram.com/maifazulh_11?igsh=cmZldmUweWw1Njk2" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-full text-gray-400 hover:text-white hover:bg-pixelorange/20 transition-all duration-300 border border-gray-700">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                        <span class="text-xs font-medium">Instagram</span>
+                    </a>
+                </div>
+                </div>
+
+                <div class="group bg-cardbg p-6 rounded-2xl border border-gray-800 hover:border-emerald-400 transition-all duration-300 hover:-translate-y-2 text-center fade-up" style="transition-delay: 300ms;">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-emerald-400 rounded-full blur opacity-20 group-hover:opacity-50 transition"></div>
+                        <img src="/Gambar/Lexa.jpeg" alt="Foto UI/UX" class="relative w-full h-full object-cover rounded-full border-2 border-gray-700 group-hover:border-emerald-400 transition">
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Leksa Aura Ramadhani</h3>
+                    <p class="text-emerald-400 text-sm font-semibold uppercase tracking-wider mb-3">DO (Design Officer)</p>
+                    <p class="text-gray-500 text-sm mb-4">"Menerjemahkan kebutuhan pengguna menjadi tampilan visual yang indah."</p>
+                    <div class="flex justify-center gap-3">
+                    <a href="https://www.instagram.com/l.aurainhere?igsh=MXQwY3VzMThyeWJ3eA%3D%3D&utm_source=qr" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-full text-gray-400 hover:text-white hover:bg-pixelorange/20 transition-all duration-300 border border-gray-700">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                        <span class="text-xs font-medium">Instagram</span>
+                    </a>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-cardbg/30 relative">
+         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pixelcyan/5 rounded-full filter blur-3xl -z-10"></div>
+
+         <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-10 fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pilih Paket Layanan</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Harga mahasiswa, kualitas industri. Pilih solusi yang pas buat bisnis kamu.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-up">
+                <button onclick="switchTab('web')" id="btn-web" class="tab-btn px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-semibold transition-all shadow-lg shadow-cyan-500/30">
+                    Web Development
+                </button>
+                <button onclick="switchTab('sosmed')" id="btn-sosmed" class="tab-btn px-6 py-2 rounded-full border border-gray-600 text-gray-400 hover:border-pixelorange hover:text-pixelorange transition-all">
+                    Social Media
+                </button>
+            </div>
+
+            <div id="pricing-web" class="pricing-content grid md:grid-cols-3 gap-8 items-center animate-fade-in">
+                <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-pixelcyan transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-pixelcyan">BASIC</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Buat yang baru mau *go digital*.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 100-150rb<span class="text-sm text-gray-500 font-normal">/mulai</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ Landing Page</li>
+                        <li class="flex items-center">✅ HTML5,CSS,JS,Tailwind CSS</li>
+                        <li class="flex items-center">✅ 1 Halaman (Single Page)</li>
+                        <li class="flex items-center">✅ Revisi 1x minor</li>
+                        <li class="flex items-center">✅ Mobile Responsive</li>
+                        <li class="flex items-center">✅ 1-2 hari</li>
+                        <li class="flex items-center">❌ Hosting</li>
+                        <li class="flex items-center opacity-50">❌ Admin Panel</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Pilih Basic</a>
+                </div>
+
+                <div class="bg-gradient-to-b from-gray-800 to-gray-900 p-8 rounded-2xl border-2 border-pixelcyan relative transform md:scale-110 z-10 shadow-xl">
+                    <div class="absolute top-0 right-0 bg-pixelcyan text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BEST SELLER</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">STARTER</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Standar perusahaan & bisnis.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 500-900rb<span class="text-sm text-gray-500 font-normal">/mulai</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ Company Profile</li>
+                        <li class="flex items-center">✅ <strong>Laravel Framework,PHP,CSS,JS,Talwind</strong></li>
+                        <li class="flex items-center">✅ max 5 Halaman</li>
+                        <li class="flex items-center">✅ Revisi 3x minor</li>
+                        <li class="flex items-center">✅ Service list,Galery</li>
+                        <li class="flex items-center">✅ 3-5 hari</li>
+                        <li class="flex items-center">✅ Hosting 10%</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 text-center bg-pixelcyan text-white rounded-lg font-bold hover:bg-cyan-600 transition">Pilih Starter</a>
+                </div>
+
+                <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-pixelcyan transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-pixelcyan">PREMIUM (Custom)</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Sistem kompleks & data.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 1Jt-1.3Jt<span class="text-sm text-gray-500 font-normal">/custom</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                      <li class="flex items-center">✅ Website Custom Request</li>
+                      <li class="flex items-center">✅ <strong>Dashboard Admin</strong></li>
+                      <li class="flex items-center">✅ Halaman Custom Sesuai Kebutuhan</li>
+                      <li class="flex items-center">✅ Revisi 5-6 minor</li>
+                      <li class="flex items-center">✅ Database (CRUD)</li>
+                        <li class="flex items-center">✅ Login System</li>
+                        <li class="flex items-center">✅ Max 7 hari</li>
+                        <li class="flex items-center">✅ Hosting</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Konsultasi Dulu</a>
+                </div>
+            </div>
+
+            <div id="pricing-sosmed" class="pricing-content hidden animate-fade-in space-y-16">
+    
+    <div>
+        <div class="flex items-center gap-4 mb-8">
+            <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                <span class="p-2 bg-pixelorange/20 rounded-lg">📸</span> Instagram Management
+            </h3>
+            <div class="h-px flex-1 bg-gradient-to-r from-pixelorange/50 to-transparent"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 items-stretch">
+            <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-pixelorange transition duration-300 flex flex-col justify-between">
+                <div>
+                    <h4 class="text-xl font-bold mb-2 text-pixelorange uppercase">IG Lite</h4>
+                    <p class="text-gray-400 mb-6 text-sm">Biar akun nggak kosong.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 80rb<span class="text-sm text-gray-500 font-normal">/Bulan</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ 6x Konten Feeds</li>
+                        <li class="flex items-center">✅ 4 Design Story</li>
+                        <li class="flex items-center">✅ 0 konten reels</li>
+                        <li class="flex items-center">✅ Ide & Konsep Konten</li>
+                        <li class="flex items-center">✅ Revisi Design 1x</li>
+                        <li class="flex items-center">✅ Free Copywriting</li>
+                        <li class="flex items-center">✅ Free Optimasi Hashtag</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Pilih Paket</a>
+            </div>
+
+            <div class="bg-gradient-to-b from-gray-800 to-gray-900 p-8 rounded-2xl border-2 border-pixelorange relative transform md:scale-105 z-10 shadow-xl flex flex-col justify-between">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pixelorange text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Recommended</div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2 text-white uppercase">IG Starter</h4>
+                    <p class="text-gray-300 mb-6 text-sm">Pertumbuhan organik rutin.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 110rb<span class="text-sm text-gray-400 font-normal">/mulai</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-200 text-sm font-medium">
+                        <li class="flex items-center">✅ 9 Konten Feed</li>
+                        <li class="flex items-center">✅ 5 Design Story </li>
+                        <li class="flex items-center">✅ 1 konten Reels</li>
+                        <li class="flex items-center">✅ Ide & Konsep Konten</li>
+                        <li class="flex items-center">✅ Revisi Design 2x</li>
+                        <li class="flex items-center">✅ Free Copywriting</li>
+                        <li class="flex items-center">✅ Free Optimasi Hashtag</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block w-full py-3 text-center bg-pixelorange text-white rounded-lg font-bold hover:bg-orange-600 transition shadow-lg shadow-orange-500/20">Gas Scale Up</a>
+            </div>
+
+            <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-pixelorange transition duration-300 flex flex-col justify-between">
+                <div>
+                    <h4 class="text-xl font-bold mb-2 text-pixelorange uppercase">IG Basic</h4>
+                    <p class="text-gray-400 mb-6 text-sm">Full terima beres.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 150rb<span class="text-sm text-gray-500 font-normal">/bulan</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ 12 Konten Feed</li>
+                        <li class="flex items-center">✅ 8 Design Story</li>
+                        <li class="flex items-center">✅ 2 Konten Reels</li>
+                        <li class="flex items-center">✅ Ide & Konsep Konten</li>
+                        <li class="flex items-center">✅ Revisi Design 2x</li>
+                        <li class="flex items-center">✅ Free Copywriting</li>
+                        <li class="flex items-center">✅ Free Optimasi Hashtag</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Hubungi Kami</a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="flex items-center gap-4 mb-8">
+            <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                <span class="p-2 bg-pixelorange/20 rounded-lg">📸</span> Tiktok
+            </h3>
+            <div class="h-px flex-1 bg-gradient-to-r from-pixelorange/50 to-transparent"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 items-stretch">
+            <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-pixelorange transition duration-300 flex flex-col justify-between">
+                <div>
+                    <h4 class="text-xl font-bold mb-2 text-pixelorange uppercase">Lite</h4>
+                    <p class="text-gray-400 mb-6 text-sm">Biar akun nggak kosong.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 150rb<span class="text-sm text-gray-500 font-normal">/mulai</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ 3 video</li>
+                        <li class="flex items-center">✅ Ide & Konsep Konten</li>
+                        <li class="flex items-center">✅ Revisi 1x</li>
+                        <li class="flex items-center">❌ Talent</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Pilih Paket</a>
+            </div>
+
+            <div class="bg-gradient-to-b from-gray-800 to-gray-900 p-8 rounded-2xl border-2 border-pixelorange relative transform md:scale-105 z-10 shadow-xl flex flex-col justify-between">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pixelorange text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Recommended</div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2 text-white uppercase">IG Starter</h4>
+                    <p class="text-gray-300 mb-6 text-sm">Pertumbuhan organik rutin.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 199rb<span class="text-sm text-gray-400 font-normal">/mulai</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ 4 Kontent video</li>
+                        <li class="flex items-center">✅ Ide & Konsep Konten</li>
+                        <li class="flex items-center">✅ Revisi 1x</li>
+                        <li class="flex items-center">✅ Talent</li>
+                        <li class="flex items-center">✅ Live Tiktok +30.000/12jam</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block w-full py-3 text-center bg-pixelorange text-white rounded-lg font-bold hover:bg-orange-600 transition shadow-lg shadow-orange-500/20">Gas Scale Up</a>
+            </div>
+
+            <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-pixelorange transition duration-300 flex flex-col justify-between">
+                <div>
+                    <h4 class="text-xl font-bold mb-2 text-pixelorange uppercase">Pro Manager</h4>
+                    <p class="text-gray-400 mb-6 text-sm">Full terima beres.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 250rb<span class="text-sm text-gray-500 font-normal">/bulan</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ 6 Kontent video</li>
+                        <li class="flex items-center">✅ Ide & Konsep Konten</li>
+                        <li class="flex items-center">✅ Revisi 1x</li>
+                        <li class="flex items-center">✅ Talent</li>
+                        <li class="flex items-center">✅ Live Tiktok +45.000/16jam</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Hubungi Kami</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+            <div id="pricing-review" class="pricing-content hidden grid md:grid-cols-3 gap-8 items-center animate-fade-in">
+                <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-white transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-white">QUICK CHECK</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Cek kondisi akun sekilas.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 100rb<span class="text-sm text-gray-500 font-normal">/akun</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ Audit Bio & Foto Profil</li>
+                        <li class="flex items-center">✅ Cek Visual Feed (Estetika)</li>
+                        <li class="flex items-center">✅ Saran Perbaikan (PDF 1 Hal)</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Coba Dulu</a>
+                </div>
+
+                <div class="bg-gradient-to-b from-gray-800 to-gray-900 p-8 rounded-2xl border-2 border-white relative transform md:scale-110 z-10 shadow-xl">
+                    <div class="absolute top-0 right-0 bg-white text-black text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">DEEP DIVE</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Bedah data & performa.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 350rb<span class="text-sm text-gray-500 font-normal">/akun</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ Analisa Engagement Rate</li>
+                        <li class="flex items-center">✅ Bedah Waktu Posting Terbaik</li>
+                        <li class="flex items-center">✅ Review Copywriting Caption</li>
+                        <li class="flex items-center">✅ <strong>Strategi Konten 1 Bulan</strong></li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 text-center bg-white text-black rounded-lg font-bold hover:bg-gray-200 transition">Analisa Akun Saya</a>
+                </div>
+
+                <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-white transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-white">COMPETITOR SPY</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Intip strategi lawan.</p>
+                    <div class="text-3xl font-bold text-white mb-6">Rp 750rb<span class="text-sm text-gray-500 font-normal">/paket</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center">✅ Analisa 3 Kompetitor Utama</li>
+                        <li class="flex items-center">✅ Apa yang Mereka Lakukan?</li>
+                        <li class="flex items-center">✅ Celah yang Bisa Kita Masuki</li>
+                        <li class="flex items-center">✅ Laporan Lengkap (Presentasi)</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Intip Kompetitor</a>
+                </div>
+            </div>
+
+         </div>
+    </section>
+
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="bg-cardbg p-8 md:p-16 rounded-3xl border border-gray-800 flex flex-col items-center text-center fade-up">
+            
+            <div class="max-w-2xl">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Siap Memulai Proyek?</h2>
+                <p class="text-gray-400 mb-12 text-lg">Hubungi kami langsung melalui saluran di bawah ini. Kami siap membantu mewujudkan ide digital Anda menjadi kenyataan.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group p-6 rounded-2xl bg-darkbg border border-gray-800 hover:border-pixelcyan transition-all duration-300">
+                        <div class="w-12 h-12 bg-pixelcyan/10 rounded-full flex items-center justify-center text-pixelcyan mx-auto mb-4">
+                            <i class="fas fa-location-dot text-xl"></i>
+                        </div>
+                        <h4 class="text-white font-bold mb-2">Alamat</h4>
+                        <p class="text-gray-400 text-sm">Jl. Raya Situbondo, Blindungan, Kec. Bondowoso, Kabupaten Bondowoso, Jawa Timur 68211</p>
+                    </div>
+
+                    <div class="group p-6 rounded-2xl bg-darkbg border border-gray-800 hover:border-pixelorange transition-all duration-300">
+                        <div class="w-12 h-12 bg-pixelorange/10 rounded-full flex items-center justify-center text-pixelorange mx-auto mb-4">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <h4 class="text-white font-bold mb-2">Email</h4>
+                        <p class="text-gray-400 text-sm">yaziddaud9@gmail.com</p>
+                    </div>
+
+                    <div class="group p-6 rounded-2xl bg-darkbg border border-gray-800 hover:border-pixelcyan transition-all duration-300">
+                        <div class="w-12 h-12 bg-pixelcyan/10 rounded-full flex items-center justify-center text-pixelcyan mx-auto mb-4">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <h4 class="text-white font-bold mb-2">WhatsApp</h4>
+                        <p class="text-gray-400 text-sm">+62 812-3456-7890</p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="https://wa.me/6282333529127" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pixelcyan to-pixelorange rounded-full text-white font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-cyan-500/30">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        Chat Sekarang via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <footer class="py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+        <p>© 2026 Pixel Brand.by Digital Business Students in Bondowoso.</p>
+    </footer>
+
+
+    <script>
+        // 1. NAVBAR SCROLL EFFECT
+        // Mengubah background navbar menjadi solid saat di-scroll ke bawah
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-darkbg/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-gray-800');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('bg-darkbg/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-gray-800');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // 2. SCROLL REVEAL ANIMATION (Intersection Observer)
+        // Membuat elemen muncul perlahan saat masuk viewport
+        const fadeUpElements = document.querySelectorAll('.fade-up');
+
+        const observerOptions = {
+            threshold: 0.1 // Elemen dianggap terlihat jika 10% sudah masuk layar
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observasi setelah muncul
+                }
+            });
+        }, observerOptions);
+
+        fadeUpElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // 3. PRICING TAB SYSTEM LOGIC
+        function switchTab(category) {
+            // 1. Sembunyikan semua konten pricing
+            document.querySelectorAll('.pricing-content').forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('grid'); // Hapus grid biar gak numpuk
+            });
+
+            // 2. Munculkan konten yang dipilih
+            const selectedContent = document.getElementById('pricing-' + category);
+            selectedContent.classList.remove('hidden');
+            selectedContent.classList.add('grid');
+            
+            // Tambahkan animasi fade-in ulang biar mulus
+            selectedContent.classList.remove('animate-fade-in');
+            void selectedContent.offsetWidth; // Trigger reflow (reset animasi)
+            selectedContent.classList.add('animate-fade-in');
+
+            // 3. Reset style semua tombol jadi default (abu-abu/outline)
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-6 py-2 rounded-full border border-gray-600 text-gray-400 hover:border-gray-400 transition-all";
+            });
+
+            // 4. Set style tombol yang aktif sesuai kategori warnanya
+            const activeBtn = document.getElementById('btn-' + category);
+            
+            if(category === 'web') {
+                activeBtn.className = "tab-btn px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-semibold transition-all shadow-lg shadow-cyan-500/30";
+            } else if(category === 'sosmed') {
+                activeBtn.className = "tab-btn px-6 py-2 rounded-full border border-pixelorange bg-pixelorange text-white font-semibold transition-all shadow-lg shadow-orange-500/30";
+            } else if(category === 'review') {
+                activeBtn.className = "tab-btn px-6 py-2 rounded-full border border-white bg-white text-black font-semibold transition-all shadow-lg shadow-white/20";
+            }
+        }
+
+        // 4. PORTFOLIO FILTER LOGIC
+function filterPortfolio(category) {
+    const items = document.querySelectorAll('.port-item');
+    const tabs = document.querySelectorAll('.port-tab');
+
+    // 1. Reset warna semua tab button
+    tabs.forEach(tab => {
+        tab.className = "port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-gray-500 transition-all";
+    });
+
+    // 2. Set warna aktif pada tab yang diklik
+    const activeTab = document.getElementById('tab-' + category);
+    if(category === 'web') activeTab.className = "port-tab px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-medium shadow-lg shadow-cyan-500/20";
+    else if(category === 'sosmed') activeTab.className = "port-tab px-6 py-2 rounded-full border border-pixelorange bg-pixelorange text-white font-medium shadow-lg shadow-orange-500/20";
+    else if(category === 'design') activeTab.className = "port-tab px-6 py-2 rounded-full border border-pink-500 bg-pink-500 text-white font-medium shadow-lg shadow-pink-500/20";
+    else activeTab.className = "port-tab px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-medium shadow-lg shadow-cyan-500/20";
+
+    // 3. Logika sembunyi/muncul item
+    items.forEach(item => {
+        item.style.display = 'none'; // Sembunyi semua dulu
+        
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block'; // Munculkan yang sesuai
+            
+            // Tambahkan animasi fade-in sederhana
+            item.classList.remove('fade-up');
+            void item.offsetWidth; // trigger reflow
+            item.classList.add('fade-up', 'visible');
+        }
+    });
+}
+
+// 5. MOBILE MENU LOGIC
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Fungsi buka menu
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Agar tidak bisa scroll saat menu buka
+        });
+
+        // Fungsi tutup menu
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Aktifkan scroll lagi
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+
+        // Tutup menu otomatis saat link diklik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+
+</body>
+</html>
