@@ -218,7 +218,7 @@
                     <div class="w-14 h-14 bg-pixelcyan/20 flex items-center justify-center rounded-lg mb-6 text-pixelcyan text-2xl">
                         🚀
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Social Media Mgmt</h3>
+                    <h3 class="text-xl font-bold mb-4">Social Media Management</h3>
                     <p class="text-gray-400 mb-4">Mengelola kehadiran brand Anda di media sosial untuk meningkatkan engagement dan loyalitas.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
                         <li>• Content Planning & Creation</li>
@@ -231,88 +231,101 @@
     </section>
 
     <section id="portfolio" class="py-20 bg-darkbg">
-    <div class="container mx-auto px-6 md:px-12">
-        <div class="text-center mb-12 fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Karya Terbaru</h2>
-            <p class="text-gray-400 max-w-xl mx-auto">Bukti nyata dedikasi kami dalam menciptakan solusi digital yang berdampak.</p>
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Karya Terbaru</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Bukti nyata dedikasi kami dalam menciptakan solusi digital yang berdampak.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-up">
+                <button onclick="filterPortfolio('all')" id="tab-all" class="port-tab px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-medium transition-all shadow-lg shadow-cyan-500/20">Semua</button>
+                <button onclick="filterPortfolio('web')" id="tab-web" class="port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-pixelcyan transition-all">Web Development</button>
+                <button onclick="filterPortfolio('design')" id="tab-design" class="port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-pink-500 transition-all">Graphic Design</button>
+                <button onclick="filterPortfolio('social')" id="tab-social" class="port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-yellow-500 transition-all">Social Management</button>
+            </div>
+
+            <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                
+                <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                    <div class="p-4 bg-gray-900/50">
+                        <img src="/Gambar/asa.jpg" alt="Sistem AHP" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Web App</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Website photo booth Online</h3>
+                        <p class="text-gray-500 text-sm mt-2">Membuat website photo booth sederhana</p>
+                    </div>
+                </div>
+
+                <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up" style="transition-delay: 100ms;">
+                    <div class="p-4 bg-gray-900/50">
+                        <img src="/Gambar/web.jpg" alt="Landing Page UMKM" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Landing Page</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Website Jurusan Bisnis</h3>
+                        <p class="text-gray-500 text-sm mt-2">Mengenal Tentang Jurusan Bisnis di Politeknik Negeri Jember</p>
+                    </div>
+                </div>
+
+                <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                    <div class="p-4 bg-gray-900/50">
+                        <img src="/Gambar/bd.jpg" alt="Booking Lapangan" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Web App</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Sistem Booking Lapangan</h3>
+                        <p class="text-gray-500 text-sm mt-2">Mempermudah untung booking lewat online</p>
+                    </div>
+                </div>
+
+                <div class="port-item social group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                    <div class="p-4 bg-gray-900/50">
+                        <img src="/Gambar/sosial.png"" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest">Social Media</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Social Media Content</h3>
+                        <p class="text-gray-500 text-sm mt-2">Optimasi konten video pendek untuk meningkatkan brand awareness.</p>
+                    </div>
+                </div>
+
+                <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                    <div class="p-4 bg-gray-900/50">
+                        <img src="/Gambar/vre.png" alt="Design Vre" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Design for bodycare</h3>
+                        <p class="text-gray-500 text-sm mt-2">Proyek rebranding visual Instagram feeds yang modern dan estetik.</p>
+                    </div>
+                </div>
+
+                <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                    <div class="p-4 bg-gray-900/50">
+                        <img src="/Gambar/anaga.png" alt="Design Canva" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Design Canva Creative</h3>
+                        <p class="text-gray-500 text-sm mt-2">Aset konten kreatif yang dioptimasi untuk promosi digital.</p>
+                    </div>
+                </div>
+
+                <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
+                    <div class="p-4 bg-gray-900/50">
+                        <img src="/Gambar/akuu.jpg" alt="Design UI/UX" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Design UI/UX App</h3>
+                        <p class="text-gray-500 text-sm mt-2">Perancangan antarmuka aplikasi dengan fokus pada usability pengguna.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        <div class="flex flex-wrap justify-center gap-4 mb-12 fade-up">
-            <button onclick="filterPortfolio('all')" id="tab-all" class="port-tab px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-medium transition-all shadow-lg shadow-cyan-500/20">Semua</button>
-            <button onclick="filterPortfolio('web')" id="tab-web" class="port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-pixelcyan transition-all">Web Development</button>
-            <button onclick="filterPortfolio('design')" id="tab-design" class="port-tab px-6 py-2 rounded-full border border-gray-700 text-gray-400 hover:border-pink-500 transition-all">Graphic Design</button>
-        </div>
-
-        <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            
-            <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
-                <div class="p-4 bg-gray-900/50">
-                    <img src="/Gambar/asa.jpg" alt="Sistem AHP" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Web App</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Website photo booth Online</h3>
-                    <p class="text-gray-500 text-sm mt-2">Membuat website photo booth sederhana </p>
-                </div>
-            </div>
-
-            <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up" style="transition-delay: 100ms;">
-                <div class="p-4 bg-gray-900/50">
-                    <img src="/Gambar/web.jpg" alt="Landing Page UMKM" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Landing Page</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Website Jurusan Bisnis</h3>
-                    <p class="text-gray-500 text-sm mt-2">Mengenal Tentang Jurusan Bisnis di Politeknik Negeri Jember</p>
-                </div>
-            </div>
-            <div class="port-item web group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up" style="transition-delay: 100ms;">
-                <div class="p-4 bg-gray-900/50">
-                    <img src="/Gambar/bd.jpg" alt="Landing Page UMKM" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <span class="text-pixelcyan text-xs font-bold uppercase tracking-widest">Landing Page</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Website Sistem Booking Lapanagan Badmintoon</h3>
-                    <p class="text-gray-500 text-sm mt-2">Mempermudah untung booking lewat online</p>
-                </div>
-            </div>
-
-            <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
-                <div class="p-4 bg-gray-900/50">
-                    <img src="/Gambar/vre.png" alt="Design Vre" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Design for bodycare</h3>
-                    <p class="text-gray-500 text-sm mt-2">proyek rebranding bodycare yang diimplementasikan dalam bentuk desain Instagram feeds. Konsep visual dibuat lebih modern, clean, dan konsisten untuk memperkuat identitas brand serta meningkatkan daya tarik audiens di media sosial. Setiap konten dirancang dengan komposisi yang estetik, informatif, dan selaras dengan positioning produk.</p>
-                </div>
-            </div>
-
-            <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
-                <div class="p-4 bg-gray-900/50">
-                    <img src="/Gambar/anaga.png" alt="Design Canva" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Design Canva</h3>
-                    <p class="text-gray-500 text-sm mt-2">Aset konten kreatif yang dioptimasi untuk kebutuhan promosi brand.</p>
-                </div>
-            </div>
-
-            <div class="port-item design group relative overflow-hidden rounded-3xl border border-gray-800 bg-cardbg transition-all duration-500 hover:-translate-y-2 fade-up">
-                <div class="p-4 bg-gray-900/50">
-                    <img src="/Gambar/akuu.jpg" alt="Design Canva" class="w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <span class="text-pink-500 text-xs font-bold uppercase tracking-widest">Branding</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Design UI/UX</h3>
-                    <p class="text-gray-500 text-sm mt-2">Perancangan antarmuka aplikasi yang modern dengan fokus pada kemudahan navigasi (usability) dan estetika visual untuk memberikan pengalaman terbaik bagi pengguna.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
+    </section>
 
     <section id="team" class="py-20 bg-darkbg relative overflow-hidden">
         <div class="absolute right-0 top-1/2 w-64 h-64 bg-pixelcyan/5 rounded-full filter blur-3xl"></div>
@@ -417,7 +430,7 @@
             <div id="pricing-web" class="pricing-content grid md:grid-cols-3 gap-8 items-center animate-fade-in">
                 <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-pixelcyan transition duration-300">
                     <h3 class="text-xl font-bold mb-2 text-pixelcyan">BASIC</h3>
-                    <p class="text-gray-400 mb-6 text-sm">Buat yang baru mau *go digital*.</p>
+                    <p class="text-gray-400 mb-6 text-sm">Buat yang baru mau Go Digital
                     <div class="text-3xl font-bold text-white mb-6">Rp 100-150rb<span class="text-sm text-gray-500 font-normal">/mulai</span></div>
                     <ul class="space-y-3 mb-8 text-gray-300 text-sm">
                         <li class="flex items-center">✅ Landing Page</li>
@@ -426,7 +439,7 @@
                         <li class="flex items-center">✅ Revisi 1x minor</li>
                         <li class="flex items-center">✅ Mobile Responsive</li>
                         <li class="flex items-center">✅ 1-2 hari</li>
-                        <li class="flex items-center">❌ Hosting</li>
+                        <li class="flex items-center opacity-50">❌ Hosting</li>
                         <li class="flex items-center opacity-50">❌ Admin Panel</li>
                     </ul>
                     <a href="#contact" class="block w-full py-2 text-center border border-gray-600 rounded-lg hover:bg-gray-700 transition">Pilih Basic</a>
@@ -670,7 +683,7 @@
                             <i class="fas fa-phone text-xl"></i>
                         </div>
                         <h4 class="text-white font-bold mb-2">WhatsApp</h4>
-                        <p class="text-gray-400 text-sm">+62 812-3456-7890</p>
+                        <p class="text-gray-400 text-sm">+62 812-3352-9127</p>
                     </div>
                 </div>
 
@@ -776,7 +789,8 @@ function filterPortfolio(category) {
     // 2. Set warna aktif pada tab yang diklik
     const activeTab = document.getElementById('tab-' + category);
     if(category === 'web') activeTab.className = "port-tab px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-medium shadow-lg shadow-cyan-500/20";
-    else if(category === 'sosmed') activeTab.className = "port-tab px-6 py-2 rounded-full border border-pixelorange bg-pixelorange text-white font-medium shadow-lg shadow-orange-500/20";
+    else if(category === 'social') activeTab.className = "port-tab px-6 py-2 rounded-full border border-yellow-500 bg-yellow-500 text-white font-medium shadow-lg shadow-yellow-500/20";
+    else if(category === 'design') activeTab.className = "port-tab px-6 py-2 rounded-full border border-pink-500 bg-pink-500 text-white font-medium shadow-lg shadow-pink-500/20";
     else if(category === 'design') activeTab.className = "port-tab px-6 py-2 rounded-full border border-pink-500 bg-pink-500 text-white font-medium shadow-lg shadow-pink-500/20";
     else activeTab.className = "port-tab px-6 py-2 rounded-full border border-pixelcyan bg-pixelcyan text-white font-medium shadow-lg shadow-cyan-500/20";
 
